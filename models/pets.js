@@ -17,7 +17,7 @@ const petsSchema = new Schema({
   // owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 })
 
-const Pet = mongoose.model('Pet', petSchema)
+const Pet = mongoose.model('Pet', petsSchema)
 
 export {
   Pet

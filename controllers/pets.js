@@ -1,7 +1,7 @@
 import { Pet } from "../models/pet.js"
 
 function index(req, res) {
-  console.log("PETS CONSOLE LOG")
+  // console.log("PETS CONSOLE LOG")
   Pet.find({})
   .then(pets => {
     res.render('pets', {
@@ -17,7 +17,7 @@ function index(req, res) {
 }
 
 function create(req, res) {
-  req.body.owner = req.user.profile._id
+  req.body.myPatient = req.user.profile._id
   Pet.create(req.body)
   .then(pet => {
     res.redirect('/pets/new')

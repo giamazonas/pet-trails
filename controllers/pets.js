@@ -35,8 +35,27 @@ function newPet(req, res) {
 }
 
 function show(req, res) {
-  // Pet.findById
-  console.log('test', show)
+  Pet.findById(req.params.id)
+  .populate("myPatient")
+  .then(pet => {
+    res.render('pets/show', {
+      pet,
+      title: "show pet",
+    })
+  })
+  .catch(err => {
+    res.redirect('/pets')
+  })
+}
+
+function edit(req, res) {
+  Pet.findById(req.params.id, function (error, pet) {
+    res.render("pets/show", {
+      pet,
+      error,
+      title: "Edit Pet"
+    })
+  })
 }
 
 function update(req, res) {
@@ -52,16 +71,16 @@ function update(req, res) {
       throw new Error("NOT AUTHORIZED")
     }
   })
-  .catch(err => {
-    console.log("the error:", err)
-    res.redirect("/tacos")
+  Pet.findByIdAndUpdate(req.params.id, req.body, function(error, pet) {
+    res.redirect('/pets/:id')
   })
 }
 
 export {
+  newPet as new,
   index,
   create,
-  newPet as new,
   show,
+  edit,
   update,
 }

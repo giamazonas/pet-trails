@@ -18,14 +18,14 @@
   <br>
   <h3>Animals I provide care for:</h3><br>
   <table>
-    <% if (pets.myPatient === true) { 
+    <% if (pets.myPatient = true) { 
       pets.forEach(pet => { %>
       <tr>  
         <td><%= pet.name %></p>
           <td><%= pet.id %></p>
           <td><a class="details" href="pets/<%= pet._id%>">Details</a></td>
       </tr><br>
-    <% }} %>
+    <% })} %>
   </table>
   <br>
 </main>

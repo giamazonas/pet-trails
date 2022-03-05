@@ -9,12 +9,14 @@ router.get('/', petsCtrl.index)
 // GET localhost:3000/pets/new
 router.get('/pets/new', isLoggedIn, petsCtrl.new)
 // GET localhost:3000/pets/:id
+//  should this be under profile as well?
 router.get('/pets/:id', petsCtrl.show)
 
 // POST localhost:3000/pets/new
 router.post('/pets/new', isLoggedIn, petsCtrl.create)
 
 //PATCH localhost:3000/pets/:id
+router.get('/:id', petsCtrl.edit)
 router.patch('/pets/:id', petsCtrl.update)
 
 

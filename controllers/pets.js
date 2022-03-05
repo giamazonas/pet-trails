@@ -9,10 +9,10 @@ function index(req, res) {
       title: pets,
     })
   }), console.log(`PETS HERE`)
-  .catch(err => {
-    console.log(err)
-    res.redirect('/pets')
-  })
+  // .catch(err => {
+  //   console.log(err)
+  //   res.redirect('/')
+  // })
 }
 
 function create(req, res) {

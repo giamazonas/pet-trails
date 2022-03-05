@@ -4,9 +4,9 @@ import { isLoggedIn } from "../middleware/middleware.js"
 
 const router = Router()
 
-router.get('/pets', petsCtrl.index)
+router.get('/', petsCtrl.index)
 router.post('/pets/new', isLoggedIn, petsCtrl.create)
-// router.post('/pets', petsCtrl.show)
+// router.get('/pets', petsCtrl.show)
 
 console.log("PETS ROUTER")
 

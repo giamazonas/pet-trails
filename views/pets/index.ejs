@@ -2,23 +2,33 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1> FURBABIES!:cute_pup::blob-kittycat:</h1>
+  <h1> FURBABIES! </h1>
   <h2>Search here...!</h2>
 
     <div class="search-container"
-      <form action="/views/pets">
+      <form id="form" action="/views/pets" >
       <input type="text" placeholder="Enter microchip ID here.." name="search" >
       <button type="submit"><i class="fa fa-search">Search!</i></button>
       </form>
+      <br>
+      <form id="form">
+        <input type="search" id="query" name="q" placeholder="Search...">
+        <button>Search</button>
+      </form>
+      <br>
+      <h1>move to pet</h1>
+      <% pets.forEach(pets => { %>
+        <li>
+          <a href="/pets/<%+ pet._id %>"><%= pet.id %></a>
+        </li>
+      <% }) %>
     </div>
 
 	<ul>
     <li>
       <div class="pill-nav">
-        <a class="active" href="/views/pets/add">Add a Pet</a>
+        <a class="active" href="/pets/new">Add a Pet</a>
         <a href="/">See My Patients</a>
-        <!-- <a href="#contact">Contact</a> -->
-        <!-- <a href="#about">About</a> -->
       </div>
     </li>
     <li></li>

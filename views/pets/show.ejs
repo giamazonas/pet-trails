@@ -1,0 +1,15 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>TEST</h1>
+  <% pets.forEach(pet => { %>
+    <li>
+      <a href="/pets/<%= pet._id %>"><%= pet.name %></a> 
+    </li>
+  <% }) %>
+
+</main>
+
+
+<%- include('../partials/footer') %>

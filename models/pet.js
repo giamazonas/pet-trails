@@ -10,6 +10,7 @@ const petsSchema = new Schema({
   breed: {type: String},
   gender: {type: String, required: true},
   vetInfo: {type: String, },
+  myPatient: {type: Boolean, },
   vaccines: {type: String, },
   medicalProcedures: {type: String, },
   fixed: {type: Boolean, },

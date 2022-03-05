@@ -1,20 +1,35 @@
-import { Pet } from '../models/pets.js'
+import { Pet } from "../models/pet.js"
 
 function index(req, res) {
-  console.log("PETS")
+  console.log("PETS CONSOLE LOG")
   Pet.find({})
   .then(pets => {
-    res.render('/pets', {
+    res.render('pets', {
       pets,
       title: pets,
     })
-  })
+  }), console.log(`PETS HERE`)
   .catch(err => {
     console.log(err)
-    res.redirect("/pets")
+    res.redirect('/pets')
   })
 }
 
+function create(req, res) {
+  req.body.owner = req.user.profile._id
+  Pet.create(req.body)
+  .then(pet => {
+    res.redirect('/pets/new')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/pets')
+  })
+}
+
+
 export {
-  index
+  index,
+  create,
+
 }

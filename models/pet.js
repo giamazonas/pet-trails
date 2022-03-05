@@ -19,6 +19,12 @@ const petsSchema = new Schema({
 
 const Pet = mongoose.model('Pet', petsSchema)
 
+// const schema = new mongoose.Schema({
+//   thing: [{
+//   anotherThing: String
+//   }]
+//   })
+
 export {
   Pet
 }

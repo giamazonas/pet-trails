@@ -88,8 +88,8 @@ function newPet(req, res) {
 }
 
 function search(req, res) {
-  db.pets.createIndex({ title: "microchip"})
-  res.redirect('/pets/:id')
+  db.pets.createIndex({ title: ":_id"})
+  res.redirect('/:id')
 }
 
 export {

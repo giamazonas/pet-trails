@@ -2,13 +2,43 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>New:</h1>
-
-  <h1> You have added <%= pet.name %>!  </h1>
-  <main>
+  <div>
+    <h1> You have added <%= pet.name %>!  </h1>
+      <div class="petOptions">
+        <h3>Name:</h3>
+          <h4><%= pet.name %><br></h4>
+        <h3>Microchip Number:</h3> 
+          <%= pet._id %><br>
+        <h3>Age:</h3>
+          <%= pet.age %><br>
+        <h3>Birthdate:</h3>
+          <%= pet.birthdate %><br>
+        <h3>Breed:</h3>
+          <%= pet.breed %><br>
+        <h3>Gender:</h3>
+          <%= pet.gender %><br>
+        <h3>My patient?</h3>
+          <%= pet.myPatient %><br>
+        <h3>Vet Information:</h3>
+          <%= pet.vetInfo %><br>
+        <h3>Vaccines List:</h3>
+          <%= pet.vaccines %><br>
+        <h3>Medical Procedures:</h3>
+          <%= pet.medicalProcedures %><br>
+        <h3>Spayed or Neutered?</h3>
+          <%= pet.fixed %><br>
+        <h3>Additional Notes:</h3>
+        <h3>Any Previous Names:</h3>
+          <%= pet.nameOther %><br>
+        <h3>Record was input or updated on:</h3>
+          <%= pet.timestamps %><br>
+        <h3>Owner Information:</h3>
+          <%= pet.owner %><br>
+      </div>
+  </div> 
     
   
-    <%= pet.body %>
+
 
   
   </main>

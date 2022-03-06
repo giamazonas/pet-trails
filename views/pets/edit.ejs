@@ -1,0 +1,74 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1> THIS SHOULD BE WHERE EDIT DIRECTS </h1>
+  <h1>Edit Pet Info</h1>
+  <div id="form">
+    <form action="/pets/:id/edit" method="POST">
+      <label>Microchip:
+        <h3><%= pet.microchip %></h3>
+      </label><br><br>
+      <label>Name:
+        <h3><%= pet.name %></h3>
+        <input class="inputBox" type="String" name="name" >
+      </label><br><br>
+      <label>Age:
+        <h3><%= pet.age %></h3>
+        <input class="inputBox" type="Number" name="age" >
+      </label><br><br>
+      <label>Birthdate:
+        <h3><%= pet.birthdate %></h3>
+        <input class="inputBox" type="datetime-local" name="birthdate" >
+      </label><br><br>
+      <label>Breed:
+        <h3><%= pet.breed %></h3>
+          <input class="inputBox" type="String" name="breed" >
+      </label><br><br>
+      <label>Gender:
+        <h3><%= pet.gender %></h3>
+        <input class="inputBox" type="String" name="gender" >
+      </label><br><br>
+      <label>My Patient:
+        <h3><%= pet.myPatient %></h3>
+        <input class="checkbox" type="Boolean" name="myPatient" >
+        </label>CHECKBOX HERE?<br><br>
+
+      <label>Vet information:
+        <h3><%= pet.vetInfo %></h3>
+      <input class="inputBox" type="String" name="vetInfo" >
+      </label><br><br>
+      <label>Vaccines:
+        <h3><%= pet.vaccines %></h3>
+        <input class="inputBox" type="String" name="vaccines" placeholder="type and expiration date" >
+      </label><br><br>
+      <label>Medical Procedures:
+        <h3><%= pet.medicalProcedures %></h3>
+        <input class="inputBox" type="String" name="medicalProcedures" >
+      </label><br><br>
+      <label>Fixed:
+        <h3><%= pet.fixed %></h3>
+        <input class="inputBox" type="Boolean" name="fixed" placeholder="true or false">
+      </label><br><br>
+      <label>Notes:
+        <h3><%= pet.notes %></h3>
+        <input class="inputBox" type="String" name="notes" >
+      </label><br><br>
+      <label>Previous names:
+        <h3><%= pet.Previous %></h3>
+        <input class="inputBox" type="String" name="nameOther" ></label><br><br>
+      <label>Owner:
+        <h3><%= pet.owner %></h3>
+        <input class="inputBox" type="String" name="Owner" >
+      </label><br><br>
+
+      <button type="submit" 
+      class="submitBtn"> Save Info</button>
+      <br><br>
+    </form>
+  </div>
+
+
+</main>
+
+<%- include('../partials/footer') %>

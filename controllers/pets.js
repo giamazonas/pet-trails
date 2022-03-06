@@ -51,8 +51,9 @@ function show(req, res) {
 }
 
 function edit(req, res) {
+  console.log('TEST EDIT')
   Pet.findById(req.params.id, function (error, pet) {
-    res.render("pets/new", {
+    res.render("pets/edit", {
       pet,
       error,
       title: "Edit Pet"
@@ -64,15 +65,17 @@ function update(req, res) {
   console.log(req.params.id)
   Pet.findById(req.params.id)
   .then(pet => {
-    if (pet.myPatient.equals(req.user.profile._id)) {
       pet.update(req.body, {new: true})
       .then(() => {
         res.redirect(`/pets/${req.params.id}`)
       })
-    } else {
-      throw new Error("NOT AUTHORIZED")
-    }
-  })
+    } 
+    // {
+    //   if (pet.myPatient.equals(req.user.profile._id)) 
+    //   else {
+    //   throw new Error("NOT AUTHORIZED")
+    // }
+  )
   Pet.findByIdAndUpdate(req.params.id, req.body, function(error, pet) {
     res.redirect('/pets/:id')
   })

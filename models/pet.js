@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const petsSchema = new Schema({
-  microchip: {type: Number, },
+  _id: {type: Number, },
   name: {type: String, required:true},
   age: {type: Number, timestamps: true},
   birthdate: {type: Number, },

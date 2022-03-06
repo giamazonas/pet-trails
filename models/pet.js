@@ -22,9 +22,9 @@ const petsSchema = new Schema({
   owner: [{type: Schema.Types.ObjectId, ref: 'Owner'}]
 })
 
-const Pet = mongoose.model('Pet', petsSchema)
+const Pets = mongoose.model('Pets', petsSchema)
 
 
 export {
-  Pet,
+  Pets,
 }

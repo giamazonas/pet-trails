@@ -1,9 +1,9 @@
 
-import { Pet } from "../models/pet.js"
+import { Pets } from "../models/pet.js"
 
 function index(req, res) {
   // console.log("PETS CONSOLE LOG")
-  Pet.find({})
+  Pets.find({})
   .then(pets => {
     res.render('pets', {
       pets,
@@ -22,7 +22,7 @@ function create(req, res) {
   console.log('PETS', req.body)
   // req.body.myPatient = req.user.profile._id
   // req.body.myPatient = !!req.body.myPatient 
-  Pet.create(req.body)
+  Pets.create(req.body)
   .then(pet => {
     pet.save(function(error){
       console.log('PET', pet)
@@ -37,7 +37,7 @@ function create(req, res) {
 
 function show(req, res) {
   console.log('show pet function')
-  Pet.findById(req.params.id)
+  Pets.findById(req.params.id)
   .populate("myPatient")
   .then(pet => {
     res.render('pets/show', {
@@ -52,7 +52,7 @@ function show(req, res) {
 
 function edit(req, res) {
   console.log('TEST EDIT')
-  Pet.findById(req.params.id, function (error, pet) {
+  Pets.findById(req.params.id, function (error, pet) {
     res.render("pets/edit", {
       pet,
       error,
@@ -63,7 +63,7 @@ function edit(req, res) {
 
 function update(req, res) {
   console.log(req.params.id)
-  Pet.findById(req.params.id)
+  Pets.findById(req.params.id)
   .then(pet => {
       pet.update(req.body, {new: true})
       .then(() => {
@@ -76,7 +76,7 @@ function update(req, res) {
     //   throw new Error("NOT AUTHORIZED")
     // }
   )
-  Pet.findByIdAndUpdate(req.params.id, req.body, function(error, pet) {
+  Pets.findByIdAndUpdate(req.params.id, req.body, function(error, pet) {
     res.redirect('/pets/:id')
   })
 }

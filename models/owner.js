@@ -3,11 +3,11 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const ownerSchema = new Schema({
-  id: {type: Number, required: true, placeholder: phoneNumber},
+  id: {type: Number, required: true},
   name: String,
-  extraPhoneNumber: {type: Number, },
+  extraPhone: Number,
   // pets: [{type: Schema.Types.ObjectId, ref: 'Pet'}],
-  avatar: String,
+  avatar: {type: String},
 })
 
 const Owner = mongoose.model('Owner', ownerSchema)

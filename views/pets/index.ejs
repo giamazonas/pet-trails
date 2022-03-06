@@ -19,7 +19,7 @@
       <h1>move to pet</h1>
       <% pets.forEach(pets => { %>
         <li>
-          <a href="/pets/<%+ pet._id %>"><%= pet.id %></a>
+          <a href="/pets/<%= pet._id %>"><%= pet.id %></a>
         </li>
       <% }) %>
     </div>

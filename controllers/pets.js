@@ -18,19 +18,16 @@ function index(req, res) {
 
 function create(req, res) {
   req.body.myPatient = req.user.profile._id
+  req.body.myPatient = !!req.body.myPatient 
   Pet.create(req.body)
   .then(pet => {
-    res.redirect('/pets/new')
+    Pet.save(function(error){
+      res.redirect('/pets/show')
+    })
   })
-  // .catch(err => {
-  //   console.log(err)
-  //   res.redirect('/pets')
-  // })
-}
-
-function newPet(req, res) {
-  res.render('pets/new', {
-    title: "Add Pet",
+  .catch(err => {
+    console.log(err)
+    res.redirect('/pets/new')
   })
 }
 
@@ -63,7 +60,7 @@ function update(req, res) {
   Pet.findById(req.params.id)
   .then(pet => {
     if (pet.myPatient.equals(req.user.profile._id)) {
-      pet.update()
+      pet.update(req.body, {new: true})
       .then(() => {
         res.redirect(`/pets/${req.params.id}`)
       })
@@ -73,6 +70,12 @@ function update(req, res) {
   })
   Pet.findByIdAndUpdate(req.params.id, req.body, function(error, pet) {
     res.redirect('/pets/:id')
+  })
+}
+
+function newPet(req, res) {
+  res.render('pets/new', {
+    title: "Add Pet",
   })
 }
 

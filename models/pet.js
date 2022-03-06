@@ -9,7 +9,9 @@ const petsSchema = new Schema({
   birthdate: {type: Number, },
   breed: {type: String},
   gender: {type: String, required: true},
-  myPatient: {type: Boolean, },
+  myPatient: {type: Boolean, 
+  // is there a way to log req.user.profile._id here if true?
+  },
   myPet: {type: Boolean, },
   vetInfo: {type: String, },
   vaccines: {type: String, },

@@ -4,6 +4,7 @@
 </head>
 <body>
   <nav>
+    <i ></i>
     <% if (user) { %>
       <a href="/auth/logout">
         <button type="submit">Logout</button>
@@ -15,4 +16,17 @@
         </button>
       </a>
     <% } %>
+      <a 
+        href="/pets" <%- title === 'Home' ? 'class="active"' : "" %>
+      >PET TRAILS MAIN
+      </a>
+      <a 
+        href="/pets/new" <%- title === 'Add Pet' ? 'class="active"' : "" %>
+      >ADD PET
+      </a>
+      <a 
+        href="/"
+        <%- title === 'My Page' ? 'class="active"' : '' %>    >
+        PET TRAILS PERSONAL
+      </a>
   </nav>

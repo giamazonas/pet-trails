@@ -16,8 +16,8 @@ router.get('/pets/:id', petsCtrl.show)
 router.post('/pets/new', isLoggedIn, petsCtrl.create)
 
 //PATCH localhost:3000/pets/:id
-router.get('/:id', petsCtrl.edit)
-router.patch('/pets/:id', petsCtrl.update)
+router.get('/:id', isLoggedIn, petsCtrl.edit)
+router.put('/pets/new', petsCtrl.update)
 
 
 console.log("PETS ROUTER")

@@ -16,12 +16,16 @@
   <h1> <a href="./pets">Go to Main..</a> </h1>
   <br>
   <br>
- 
-  <div> <h3> Animals I provide care for: </h3></div> 
-  <!-- <div> Owner.pets  insert squid print -->
-  <!-- </div> -->
-    
-  <br>
+
+  <div> <h3> Animals I provide care for: </h3></div>
+  <div> 
+  <% if (pet.myPatient = true) { %> 
+    <%= pet.name %>
+    <%= pet._id %>
+  <% } %>
+  </div>
+<br>
+
 </main>
 
 <%- include('./partials/footer') %>

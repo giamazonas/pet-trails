@@ -18,12 +18,24 @@
   <br>
 
   <div> <h3> Animals I provide care for: </h3></div>
-  <div> 
-  <% if (pet.myPatient = true) { %> 
-    <%= pet.name %>
-    <%= pet._id %>
-  <% } %>
-  </div>
+    <table class="my-pets">
+      <thead>
+        <tr>
+          <th> Name </th>
+          <th>Microchip Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Pet.forEach(pet => { %>
+          <tr>
+            <td class="eachPet"><%= pet.name %></td>
+            <td><%= pet._id %></td>
+            <td><a class="moreInfo" href="pets/<%=pet._id%>">MORE</a> </td>
+          </tr><br>
+        <% }) %>
+      </tbody>
+
+    </table>
 <br>
 
 </main>

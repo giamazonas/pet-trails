@@ -7,17 +7,16 @@ const router = Router()
 // GET localhost:3000/pets
 router.get('/', petsCtrl.index)
 // GET localhost:3000/pets/new
-router.get('/pets/new', isLoggedIn, petsCtrl.new)
+router.get('/new', isLoggedIn, petsCtrl.new)
+
+router.put('/edit', petsCtrl.update)
+// POST localhost:3000/pets/new
+router.post('/new', isLoggedIn, petsCtrl.create)
 // GET localhost:3000/pets/:id
 //  should this be under profile as well?
-router.get('/pets/:id', petsCtrl.show)
-
-// POST localhost:3000/pets/new
-router.post('/pets/new', isLoggedIn, petsCtrl.create)
-
+router.get('/:id', petsCtrl.show)
 //PATCH localhost:3000/pets/:id
-router.get('/:id', isLoggedIn, petsCtrl.edit)
-router.put('/pets/new', petsCtrl.update)
+router.get('/:id/edit', isLoggedIn, petsCtrl.edit)
 
 
 console.log("PETS ROUTER")

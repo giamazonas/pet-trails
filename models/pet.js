@@ -19,7 +19,6 @@ const petsSchema = new Schema({
   fixed: {type: Boolean, },
   notes: {type: String, },
   nameOther: {type: String, timestamps: true},
-  // owner: {type: Schema.Types.ObjectId, ref: "Profile"}
   owner: [{type: Schema.Types.ObjectId, ref: 'Owner'}]
 })
 

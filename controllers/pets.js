@@ -1,3 +1,4 @@
+
 import { Pet } from "../models/pet.js"
 
 function index(req, res) {
@@ -17,12 +18,15 @@ function index(req, res) {
 }
 
 function create(req, res) {
-  req.body.myPatient = req.user.profile._id
-  req.body.myPatient = !!req.body.myPatient 
+  console.log('OWNER', req.user)
+  console.log('PETS', req.body)
+  // req.body.myPatient = req.user.profile._id
+  // req.body.myPatient = !!req.body.myPatient 
   Pet.create(req.body)
   .then(pet => {
-    Pet.save(function(error){
-      res.redirect('/pets/show')
+    pet.save(function(error){
+      console.log('PET', pet)
+      res.redirect(`/pets/${pet._id}`)
     })
   })
   .catch(err => {
@@ -32,6 +36,7 @@ function create(req, res) {
 }
 
 function show(req, res) {
+  console.log('show pet function')
   Pet.findById(req.params.id)
   .populate("myPatient")
   .then(pet => {
@@ -41,13 +46,13 @@ function show(req, res) {
     })
   })
   .catch(err => {
-    res.redirect('/pets')
+    res.redirect('/new')
   })
 }
 
 function edit(req, res) {
   Pet.findById(req.params.id, function (error, pet) {
-    res.render("pets/show", {
+    res.render("pets/new", {
       pet,
       error,
       title: "Edit Pet"
@@ -79,6 +84,11 @@ function newPet(req, res) {
   })
 }
 
+function search(req, res) {
+  db.pets.createIndex({ title: "microchip"})
+  res.redirect('/pets/:id')
+}
+
 export {
   newPet as new,
   index,
@@ -86,4 +96,5 @@ export {
   show,
   edit,
   update,
+  search,
 }

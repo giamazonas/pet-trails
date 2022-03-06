@@ -77,6 +77,10 @@ nav > a {
   justify-content: center;
 }
 
+.petOptions {
+  font-size: 1.75rem;
+}
+
 .btn {
   margin: 1.6rem 0;
 }

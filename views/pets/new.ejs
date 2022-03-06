@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1> THIS SHOULD BE WHERE NEW DIRECTS </h1>
+  
   <h1>Add new animal</h1>
   <div id="form">
     <form action="/pets/new" method="POST">
@@ -19,18 +19,16 @@
         <input class="inputBox" type="datetime-local" name="birthdate" >
       </label><br><br>
       <label>Breed:
-          <input class="inputBox" type="String" name="breed" >
+        <input class="inputBox" type="String" name="breed" >
       </label><br><br>
       <label>Gender:
         <input class="inputBox" type="String" name="gender" >
       </label><br><br>
       <label>My Patient:
-        <input class="checkbox" type="Boolean" name="myPatient" >
-        </label>CHECKBOX HERE?<br><br>
-
-
+        <input class="checkbox" type="Boolean" name="myPatient" placeholder="true or false">
+      </label><br><br>
       <label>Vet information:
-      <input class="inputBox" type="String" name="vetInfo" >
+        <input class="inputBox" type="String" name="vetInfo" >
       </label><br><br>
       <label>Vaccines:
         <input class="inputBox" type="String" name="vaccines" placeholder="type and expiration date" >
@@ -45,7 +43,8 @@
         <input class="inputBox" type="String" name="notes" >
       </label><br><br>
       <label>Previous names:
-        <input class="inputBox" type="String" name="nameOther" ></label><br><br>
+        <input class="inputBox" type="String" name="nameOther" >
+      </label><br><br>
       <label>Owner:
         <input class="inputBox" type="String" name="Owner" >
       </label><br><br>

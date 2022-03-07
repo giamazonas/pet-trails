@@ -3,8 +3,9 @@
 
 <main>
   <div>
-    <h1> You have added <%= pet.name %>!  </h1>
-      <div class="petOptions">
+    <h1>  <%= pet.name %> details:  </h1>
+    <h3><a class="moreInfo" href="<%=pet._id%>/edit">EDIT <%=pet.name%> HERE</a>
+      <div class="petOptions"></h3>
         <h3>Name:</h3>
           <%= pet.name %><br>
         <h3>Microchip Number:</h3> 

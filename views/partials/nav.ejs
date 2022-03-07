@@ -18,15 +18,20 @@
     <% } %>
       <a 
         href="/pets" <%- title === 'Home' ? 'class="active"' : "" %>
-      >PET TRAILS MAIN
+      >Pet Trails Main
       </a>
       <a 
         href="/pets/new" <%- title === 'Add Pet' ? 'class="active"' : "" %>
-      >ADD PET
+      >Add Pet
       </a>
       <a 
         href="/"
         <%- title === 'My Page' ? 'class="active"' : '' %>    >
-        PET TRAILS PERSONAL
+        Pet Trails Vet
+      </a>
+      <a 
+        href="/owners"
+        <%- title === 'Owner Page' ? 'class="active"' : '' %>    >
+        Pet Trails Owner
       </a>
   </nav>

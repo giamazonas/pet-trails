@@ -1,4 +1,3 @@
-
 import { Pets } from "../models/pet.js"
 
 function index(req, res) {
@@ -88,7 +87,7 @@ function newPet(req, res) {
 }
 
 function search(req, res) {
-  db.pets.createIndex({ title: ":_id"})
+  db.Pets.createIndex({ title: ":_id"})
   res.redirect('/:id')
 }
 

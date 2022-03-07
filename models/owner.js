@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const ownerSchema = new Schema({
+const ownersSchema = new Schema({
   id: {type: Number, required: true},
   name: String,
   extraPhone: Number,
@@ -10,8 +10,8 @@ const ownerSchema = new Schema({
   avatar: {type: String},
 })
 
-const Owner = mongoose.model('Owner', ownerSchema)
+const Owners = mongoose.model('Owners', ownersSchema)
 
 export {
-  Owner,
+  Owners,
 }

@@ -1,7 +1,6 @@
 import { Pets } from "../models/pet.js"
 
 function index(req, res) {
-  // console.log("PETS CONSOLE LOG")
   Pets.find({})
   .then(pets => {
     res.render('pets', {
@@ -9,16 +8,9 @@ function index(req, res) {
       title: "Pets",
     })
   })
-  // console.log(`PETS HERE`)
-  // .catch(err => {
-  //   console.log(err)
-  //   res.redirect('/')
-  // })
 }
 
 function create(req, res) {
-  console.log('OWNER', req.user)
-  console.log('PETS', req.body)
   req.body.owner=req.user.profile._id
   Pets.create(req.body)
   .then(pet => {
@@ -67,18 +59,17 @@ function update(req, res) {
   console.log('TEST UPDATE',req.params.id)
   Pets.findById(req.params.id)
   .then(pet => {
-    console.log(pet)
-    Pets.updateOne(req.body, {new: true})
+    console.log('LOOK PET', pet.owner)
+    console.log('NEW INFO', req.body)
+    pet.updateOne(req.body, {new: true})
     .then(() => {
-      res.redirect(`/pets/${pet._id}`)
+      res.redirect(`/pets/${req.params.id}`)
+      console.log('LINE 67', req.params.id)
     })
   })
   .catch(err => {
     console.log(err)
     res.redirect(`/pets`)
-  })
-  Pets.findByIdAndUpdate(req.params.id, req.body, function(error, pet) {
-    res.redirect('/pets/:id')
   })
 }
 

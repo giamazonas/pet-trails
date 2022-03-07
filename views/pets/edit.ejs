@@ -4,68 +4,58 @@
 <main>
   <h1>Edit Pet Info</h1>
   <div id="form">
-    <form action="/pets/<%= pet._id%>/?_method=PUT" method="POST">
-      <h2><label>Microchip:
-        <h3><%= pet._id %></h3>
+    <form action="/pets/<%= pet._id%>/?_method=PATCH" method="POST">
+      <label>Microchip:
+        <p><%= pet._id %></p>
       </label><br><br></h2>
       <label>Name:
-        <h3><%= pet.name %></h3>
-        <input class="inputBox" type="String" name="name" >
-      </label><br><br>
-      <label>Age:
-        <h3><%= pet.age %></h3>
-        <input class="inputBox" type="Number" name="age" >
-      </label><br><br>
-      <label>Birthdate:
-        <h3><%= pet.birthdate %></h3>
-        <input class="inputBox" type="datetime-local" name="birthdate" >
-      </label><br><br>
-      <label>Breed:
-        <h3><%= pet.breed %></h3>
-        <input class="inputBox" type="String" name="breed" >
-      </label><br><br>
-      <label>Gender:
-        <h3><%= pet.gender %></h3>
-      </label><br><br>
-      <label>My Patient:
-        <h3><%= pet.myPatient %></h3>
-        <br>
-      <label>Vet information:
-        <h3><%= pet.vetInfo %></h3>
-        <input class="inputBox" type="String" name="vetInfo" placeholder="add vet info">
-      </label><br><br>
-      <label>Vaccines:
-        <h3><%= pet.vaccines %></h3>
-        <input class="inputBox" type="String" name="vaccines" placeholder="type and expiration date" >
-      </label><br><br>
-      <label>Medical Procedures:
-        <h3><%= pet.medicalProcedures %></h3>
-        <input class="inputBox" type="String" name="medicalProcedures" placeholder="add procedure info">
-      </label><br><br>
-      <label>Fixed:
-        <h3><%= pet.fixed %></h3>
-        <input class="inputBox" type="Boolean" name="fixed" placeholder="true or false">
-      </label><br><br>
-      <label>Notes:
-        <h3><%= pet.notes %></h3>
-        <input class="inputBox" type="String" name="notes" >
+        <p><%= pet.name %></p>
+        <input value="<%= pet.name %>" class="inputBox" type="String" name="name" >
       </label><br><br>
       <label>Previous names:
-        <h3><%= pet.nameOther %></h3>
-        <input class="inputBox" type="String" name="nameOther" >
+        <p><%= pet.nameOther %></p>
+        <input value="<%= pet.nameOther %>" class="inputBox" type="String" name="nameOther" >
       </label><br><br>
-      <label>Owner:
-        <ul>
-          <%Owners.forEach(info => { %> 
-          <li><%= info.name %></li>
-          <li><%= info._id %></li>
-          <li><%= info.extraPhone %></li>
-          <li><%= info.avatar %></li>
-          <% }) %>
-        </ul>
-        <input class="inputBox" type="String" name="info.name" placeholder="name, first & last">
-        <input class="inputBox" type="String" name="info._id" placeholder="primary phone #">
-        <input class="inputBox" type="String" name="info.extraPhone" placeholder="extra phone #">
+      <label>Age:
+        <p><%= pet.age %></p>
+        <input  value="<%= pet.age %>" class="inputBox" type="Number" name="age" >
+      </label><br><br>
+      <label>Birthdate:
+        <p><%= pet.birthdate %></p>
+        <input  value="<%= pet.birthdate %>" class="inputBox" type="datetime-local" name="birthdate" >
+      </label><br><br>
+      <label>Breed:
+        <p><%= pet.breed %></p>
+        <input  value="<%= pet.breed %>" class="inputBox" type="String" name="breed" >
+      </label><br><br>
+      <label>Gender:
+        <p><%= pet.gender %></p>
+      </label><br><br>
+      <label>My Patient:
+        <p><%= pet.myPatient %></p>
+        <br>
+      <label>Vet information:
+        <p><%= pet.vetInfo %></p>
+        <input  value="<%= pet.vetInfo %>" class="inputBox" type="String" name="vetInfo" placeholder="add vet info">
+      </label><br><br>
+      <label>Vaccines:
+        <p><%= pet.vaccines %></p>
+        <input  value="<%= pet.vaccines %>" class="inputBox" type="String" name="vaccines" placeholder="type and expiration date" >
+      </label><br><br>
+      <label>Medical Procedures:
+        <p><%= pet.medicalProcedures %></p>
+        <input  value="<%= pet.medicalProcedures %>" class="inputBox" type="String" name="medicalProcedures" placeholder="add procedure info">
+      </label><br><br>
+      <label>Fixed:
+        <p><%= pet.fixed %></p>
+        <input  value="<%= pet.fixed %>" class="inputBox" type="String" name="fixed" placeholder="true or false">
+      </label><br><br>
+      <label>Notes:
+        <p><%= pet.notes %></p>
+        <input  value="<%= pet.notes %>" class="inputBox" type="String" name="notes" >
+      </label><br><br>
+      
+
       </label><br><br>
       <button type="submit" 
       class="submitBtn"> Save Info</button>

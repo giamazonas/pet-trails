@@ -1,5 +1,4 @@
 import { Router } from 'express'
-// import { is } from 'express/lib/request'
 import * as petsCtrl from '../controllers/pets.js'
 import { isLoggedIn } from "../middleware/middleware.js"
 
@@ -17,7 +16,7 @@ router.post('/new', isLoggedIn, petsCtrl.create)
 router.get('/:id', isLoggedIn, petsCtrl.show)
 //PATCH localhost:3000/pets/:id
 router.get('/:id/edit', isLoggedIn, petsCtrl.edit)
-router.put('/:id', isLoggedIn, petsCtrl.update)
+router.patch('/:id', isLoggedIn, petsCtrl.update)
 
 console.log("PETS ROUTER")
 

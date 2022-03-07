@@ -10,6 +10,7 @@ const commentsSchema = new Schema({
 const petsSchema = new Schema({
   _id: {type: Number, },
   name: {type: String, required:true},
+  nameOther: {type: String, timestamps: true},
   age: {type: Number, timestamps: true},
   birthdate: {type: Number, },
   breed: {type: String},
@@ -22,8 +23,7 @@ const petsSchema = new Schema({
   medicalProcedures: {type: String, },
   fixed: {type: String, },
   notes: {type: String, },
-  nameOther: {type: String, timestamps: true},
-  owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
+  owner: [{type: Schema.Types.ObjectId, ref: 'Profile'}],
   comments: [commentsSchema],
 })
 

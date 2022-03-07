@@ -69,11 +69,11 @@ function update(req, res) {
         res.redirect(`/pets/${req.params.id}`)
       })
     } 
-    // {
-    //   if (pet.myPatient.equals(req.user.profile._id)) 
-    //   else {
-    //   throw new Error("NOT AUTHORIZED")
-    // }
+  //   {
+  //     if (Pets.myPatient.equals(req.user.profile._id)) 
+  //     else {
+  //     throw new Error("NOT AUTHORIZED")
+  //   }
   )
   Pets.findByIdAndUpdate(req.params.id, req.body, function(error, pet) {
     res.redirect('/pets/:id')
@@ -86,10 +86,12 @@ function newPet(req, res) {
   })
 }
 
-function search(req, res) {
-  db.Pets.createIndex({ title: ":_id"})
-  res.redirect('/:id')
-}
+
+
+// function search(req, res) {
+//   db.Pets.createIndex({ title: ":_id"})
+//   res.redirect('/:id')
+// }
 
 export {
   newPet as new,
@@ -98,5 +100,5 @@ export {
   show,
   edit,
   update,
-  search,
+  // search,
 }

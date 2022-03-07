@@ -19,8 +19,7 @@ function index(req, res) {
 function create(req, res) {
   console.log('OWNER', req.user)
   console.log('PETS', req.body)
-  // req.body.myPatient = req.user.profile._id
-  // req.body.myPatient = !!req.body.myPatient 
+  req.body.owner=req.user.profile._id
   Pets.create(req.body)
   .then(pet => {
     pet.save(function(error){
@@ -51,30 +50,33 @@ function show(req, res) {
 
 function edit(req, res) {
   console.log('TEST EDIT')
-  Pets.findById(req.params.id, function (error, pet) {
-    res.render("pets/edit", {
+  Pets.findById(req.params.id)
+  .then(pet => {
+    res.render('pets/edit', {
       pet,
-      error,
-      title: "Edit Pet"
+      title: "edit",
     })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/pets')
   })
 }
 
 function update(req, res) {
-  console.log(req.params.id)
+  console.log('TEST UPDATE',req.params.id)
   Pets.findById(req.params.id)
   .then(pet => {
-      pet.update(req.body, {new: true})
-      .then(() => {
-        res.redirect(`/pets/${req.params.id}`)
-      })
-    } 
-  //   {
-  //     if (Pets.myPatient.equals(req.user.profile._id)) 
-  //     else {
-  //     throw new Error("NOT AUTHORIZED")
-  //   }
-  )
+    console.log(pet)
+    Pets.updateOne(req.body, {new: true})
+    .then(() => {
+      res.redirect(`/pets/${pet._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/pets`)
+  })
   Pets.findByIdAndUpdate(req.params.id, req.body, function(error, pet) {
     res.redirect('/pets/:id')
   })
@@ -86,12 +88,10 @@ function newPet(req, res) {
   })
 }
 
-
-
-// function search(req, res) {
-//   db.Pets.createIndex({ title: ":_id"})
-//   res.redirect('/:id')
-// }
+function search(req, res) {
+  Pets.query.findById 
+  res.redirect('/:id')
+}
 
 export {
   newPet as new,
@@ -100,5 +100,5 @@ export {
   show,
   edit,
   update,
-  // search,
+  search,
 }

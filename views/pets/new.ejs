@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  
+
   <h1>Add new animal</h1>
   <div id="form">
     <form action="/pets/new" method="POST">
@@ -46,7 +46,10 @@
         <input class="inputBox" type="String" name="nameOther" >
       </label><br><br>
       <label>Owner:
-        <input class="inputBox" type="String" name="Owner" >
+        <input class="inputBox" type="String" name="owner" >
+      </label><br><br>
+      <label>Comments or Action Needed:
+        <input class="inputBox" type="String" name="comments" >
       </label><br><br>
 
       <button type="submit" 

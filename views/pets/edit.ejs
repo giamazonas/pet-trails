@@ -4,10 +4,10 @@
 <main>
   <h1>Edit Pet Info</h1>
   <div id="form">
-    <form action="/pets/:id/edit" method="POST">
-      <label>Microchip:
+    <form action="/pets/<%= pet._id%>/?_method=PUT" method="POST">
+      <h2><label>Microchip:
         <h3><%= pet._id %></h3>
-      </label><br><br>
+      </label><br><br></h2>
       <label>Name:
         <h3><%= pet.name %></h3>
         <input class="inputBox" type="String" name="name" >
@@ -26,15 +26,13 @@
       </label><br><br>
       <label>Gender:
         <h3><%= pet.gender %></h3>
-        <input class="inputBox" type="String" name="gender" >
       </label><br><br>
       <label>My Patient:
         <h3><%= pet.myPatient %></h3>
-        <input class="checkbox" type="Boolean" name="myPatient" placeholder="true or false">
-      </label><br><br>
+        <br>
       <label>Vet information:
         <h3><%= pet.vetInfo %></h3>
-        <input class="inputBox" type="String" name="vetInfo" >
+        <input class="inputBox" type="String" name="vetInfo" placeholder="add vet info">
       </label><br><br>
       <label>Vaccines:
         <h3><%= pet.vaccines %></h3>
@@ -42,7 +40,7 @@
       </label><br><br>
       <label>Medical Procedures:
         <h3><%= pet.medicalProcedures %></h3>
-        <input class="inputBox" type="String" name="medicalProcedures" >
+        <input class="inputBox" type="String" name="medicalProcedures" placeholder="add procedure info">
       </label><br><br>
       <label>Fixed:
         <h3><%= pet.fixed %></h3>
@@ -53,14 +51,22 @@
         <input class="inputBox" type="String" name="notes" >
       </label><br><br>
       <label>Previous names:
-        <h3><%= pet.previous %></h3>
+        <h3><%= pet.nameOther %></h3>
         <input class="inputBox" type="String" name="nameOther" >
       </label><br><br>
       <label>Owner:
-        <h3><%= pet.owner %></h3>
-        <input class="inputBox" type="String" name="Owner" >
+        <ul>
+          <%Owners.forEach(info => { %> 
+          <li><%= info.name %></li>
+          <li><%= info._id %></li>
+          <li><%= info.extraPhone %></li>
+          <li><%= info.avatar %></li>
+          <% }) %>
+        </ul>
+        <input class="inputBox" type="String" name="info.name" placeholder="name, first & last">
+        <input class="inputBox" type="String" name="info._id" placeholder="primary phone #">
+        <input class="inputBox" type="String" name="info.extraPhone" placeholder="extra phone #">
       </label><br><br>
-
       <button type="submit" 
       class="submitBtn"> Save Info</button>
       <br><br>

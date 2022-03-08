@@ -5,7 +5,7 @@ import { isLoggedIn } from "../middleware/middleware.js"
 const router = Router()
 
 // GET localhost:3000/pets
-router.get('/', petsCtrl.index)
+router.get('/', isLoggedIn, petsCtrl.index)
 // GET localhost:3000/pets/new
 router.get('/new', isLoggedIn, petsCtrl.new)
 

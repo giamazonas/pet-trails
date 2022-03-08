@@ -12,7 +12,7 @@ const petsSchema = new Schema({
   name: {type: String, required:true},
   nameOther: {type: String, timestamps: true},
   age: {type: Number, timestamps: true},
-  birthdate: {type: Number, },
+  birthdate: {type: Date, },
   breed: {type: String},
   gender: {type: String, required: true},
   myPatient: {type: String, 

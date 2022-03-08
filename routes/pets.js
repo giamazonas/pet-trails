@@ -17,8 +17,8 @@ router.get('/:id', isLoggedIn, petsCtrl.show)
 //PATCH localhost:3000/pets/:id
 router.get('/:id/edit', isLoggedIn, petsCtrl.edit)
 router.patch('/:id', isLoggedIn, petsCtrl.update)
+router.delete('/:id', isLoggedIn, petsCtrl.delete)
 
-console.log("PETS ROUTER")
 
 export {
   router

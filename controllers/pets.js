@@ -22,7 +22,13 @@ function create(req, res) {
   .catch(err => {
     console.log(err)
     res.redirect('/pets/new')
-  })
+  }), console.log("CREATE FUNCT", create)
+}
+
+function newPet(req, res) {
+  res.render('pets/new', {
+    title: "Add Pet",
+  }), console.log('NEWPET', newPet)
 }
 
 function show(req, res) {
@@ -73,15 +79,23 @@ function update(req, res) {
   })
 }
 
-function newPet(req, res) {
-  res.render('pets/new', {
-    title: "Add Pet",
-  })
-}
-
 function search(req, res) {
   Pets.query.findById 
   res.redirect('/:id')
+}
+
+function deletePet(req, res) {
+  Pets.findById(req.params.id)
+  .then(pet => {
+    pet.delete()
+    .then(() => {
+      res.redirect('/')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/pets')
+  })
 }
 
 export {
@@ -92,4 +106,6 @@ export {
   edit,
   update,
   search,
+  deletePet as delete,
+
 }

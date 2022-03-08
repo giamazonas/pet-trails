@@ -33,16 +33,21 @@
           <%= pet.nameOther %><br>
         <h3>Record was input or updated on:</h3>
           <%= pet.timestamps %><br>
-        <h3>Owner Information:</h3>
-          <%= pet.owner %><br>
+        <h3>Additional Information:</h3>
+          <%= comments.array.forEach(element => { %>
+            <p><%= comments.info %></p>
+            <p><%= comments.dueDate %></p>
+          <% }); %> <br>
+
       </div>
   </div> 
     
   
-
-
-  
-  </main>
+  <div>
+    <form action="/pets/<%= pet._id %>?_method=DELETE" method="POST">
+      <button class="btn" type="submit">DELETE THIS PET INFO</button>
+    </form>
+  </div>
   
 </main>
 

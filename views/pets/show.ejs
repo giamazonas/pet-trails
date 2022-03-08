@@ -34,9 +34,9 @@
         <h3>Record was input or updated on:</h3>
           <%= pet.timestamps %><br>
         <h3>Additional Information:</h3>
-          <%= comments.array.forEach(element => { %>
-            <p><%= comments.info %></p>
-            <p><%= comments.dueDate %></p>
+          <% pet.comments.forEach(el => { %>
+            <p><%= el.info %></p>
+            <p><%= el.dueDate %></p>
           <% }); %> <br>
 
       </div>

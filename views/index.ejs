@@ -14,6 +14,28 @@
   <br>
   <br>
   <h1> <a href="./pets">Go to Main..</a> </h1>
+  <section>
+    <div><br>
+      <h3>Pets List</h3>
+      <table class="my-pets">
+        <thead>
+          <tr>
+            <th> Name </th>
+            <th>Microchip Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% pets.forEach(pet => { %>
+            <tr>
+              <td class="eachPet"><%= pet.name %></td>
+              <td><%= pet._id %></td>
+              <td><a class="moreInfo" href="./pets/<%=pet._id%>">MORE</a> </td>
+            </tr><br>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </section>
   <br>
   <br>
 

@@ -10,6 +10,8 @@
           <%= pet.name %><br>
         <h3>Microchip Number:</h3> 
           <%= pet._id %><br>
+          <h3>Any Previous Names:</h3>
+          <%= pet.nameOther %><br>
         <h3>Age:</h3>
           <%= pet.age %><br>
         <h3>Birthdate:</h3>
@@ -29,23 +31,18 @@
         <h3>Spayed or Neutered?</h3>
           <%= pet.fixed %><br>
         <h3>Additional Notes:</h3>
-        <h3>Any Previous Names:</h3>
-          <%= pet.nameOther %><br>
-        <h3>Record was input or updated on:</h3>
-          <%= pet.timestamps %><br>
-        <h3>Additional Information:</h3>
-          <% pet.comments.forEach(el => { %>
-            <p><%= el.info %></p>
-            <p><%= el.dueDate %></p>
-          <% }); %> <br>
+          <%= pet.notes %>
 
+        <h3>Owner Information:</h3>
+        <br>
+        <br>
       </div>
   </div> 
     
   
-  <div>
+  <div class="deleteBtn">
     <form action="/pets/<%= pet._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit">DELETE THIS PET INFO</button>
+      <button class="btn" type="submit">DELETE ALL</button>
     </form>
   </div>
   

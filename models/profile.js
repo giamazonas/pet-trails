@@ -8,8 +8,6 @@ const profileSchema = new mongoose.Schema({
   vetInfo: String,
   vetContact: Number,
   isVet: Boolean,
-  
-  // store an array of object ids referenceing pets 
   patients: [{type: Schema.Types.ObjectId, ref: 'Pet'}],
 }, {
   timestamps: true

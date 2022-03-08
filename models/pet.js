@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 const commentsSchema = new Schema({
   info: {type: String, timestamps: true},
   dueDate: {type:  Date, default: Date.now()}
+},{timestamps: true
 })
 
 const petsSchema = new Schema({
@@ -25,6 +26,7 @@ const petsSchema = new Schema({
   notes: {type: String, },
   owner: [{type: Schema.Types.ObjectId, ref: 'Profile'}],
   comments: [commentsSchema],
+}, {timestamps: true
 })
 
 const Pets = mongoose.model('Pets', petsSchema)

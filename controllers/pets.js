@@ -80,8 +80,10 @@ function update(req, res) {
 }
 
 function search(req, res) {
+  console.log("PETSEARCH 83", search)
   Pets.query.findById 
   res.redirect('/:id')
+  console.log("PETSEARCH 86", search)
 }
 
 function deletePet(req, res) {

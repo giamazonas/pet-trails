@@ -2,6 +2,7 @@
 <%- include('./partials/nav') %>
 
 <main>
+  <br>
   <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
@@ -13,7 +14,6 @@
   <% } %>
   <br>
   <br>
-  <h1> <a href="./pets">Go to Main..</a> </h1>
   <section>
     <div><br>
       <h3>Pets List</h3>

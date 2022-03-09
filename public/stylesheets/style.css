@@ -121,12 +121,12 @@ nav > a {
   text-decoration-style: double;
   font-size: 50px;
   border-radius: 5px;
-  background-color: #af7405;
+  background-color: #15d3da;
 }
 
 .deleteBtn:hover {
   color: white;
-  background-color: rgb(126, 4, 4);
+  background-color: rgb(158, 39, 39);
   outline-color: white;
 
 }

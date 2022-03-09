@@ -23,8 +23,8 @@ const petsSchema = new Schema({
   vaccines: {type: String, },
   medicalProcedures: {type: String, },
   fixed: {type: String, },
-  notes: {type: String, },
-  owner: [{type: Schema.Types.ObjectId, ref: 'Profile'}],
+  notes: {type: String,  },
+  owner: {type: String, },
   comments: [commentsSchema],
 }, {timestamps: true
 })

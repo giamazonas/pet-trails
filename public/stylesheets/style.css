@@ -19,10 +19,17 @@ body {
 }
 
 nav {
+  overflow: hidden;
   background-color: rgb(49, 47, 47);
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 main {
@@ -30,6 +37,11 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 16px;
+}
+
+.sticky + .content{
+  padding-top:60px;
 }
 
 h1 {

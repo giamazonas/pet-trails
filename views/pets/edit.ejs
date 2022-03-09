@@ -55,9 +55,16 @@
         </label><br><br>
         <label>Notes:
           <p><%= pet.notes %></p>
-          <input  value="<%= pet.notes %>" class="inputBox" type="String" name="notes" >
         </label><br><br>
-        </label><br><br>
+        <h3>Comments:</h3>
+        <form id="add-comments-form"
+        action="/pets/<%= pet._id %>/comments"
+        method="POST" >
+          <label for="content-textarea"></label>
+          <textarea name="extraInfo" id="extraInfo"></textarea>
+            <input class="inputBox" type="datetime-local" name="dueDate" >
+        </form>
+        <br><br>
         <button type="submit" 
         class="submitBtn"> Save Info</button>
         <br><br>

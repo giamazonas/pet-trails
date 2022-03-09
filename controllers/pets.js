@@ -106,7 +106,32 @@ function deletePet(req, res) {
   })
 }
 
+// ADD STICKY NAVBAR - LOCATION??
+// window.onscroll = function() {myFunction()};
+
+// var navbar = document.getElementById("nav");
+
+// var sticky = navbar.offsetTop;
+
+// function myNavFunction() {
+//   if (window.pageYOffset >= sticky) {
+//     navbar.classList.add("sticky")
+//   } else {
+//     navbar.classList.remove("sticky");
+//   }
+// }
+// 
+function createComments(req, res){
+  Pets.findById(req.params.id, function(err, pet){
+    pet.comments.push(req.body)
+    pet.save(function(err) {
+      res.redirect(`/pets/${pet._id}`)
+    })
+  })
+}
+
 export {
+  createComments,
   newPet as new,
   index,
   create,
@@ -114,5 +139,6 @@ export {
   edit,
   update,
   deletePet as delete,
+  // myNavFunction,
 
 }

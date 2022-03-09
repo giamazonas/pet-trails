@@ -19,6 +19,9 @@ router.get('/:id/edit', isLoggedIn, petsCtrl.edit)
 router.patch('/:id', isLoggedIn, petsCtrl.update)
 router.delete('/:id', isLoggedIn, petsCtrl.delete)
 
+//POSt localhost:3000/pets/:id/comments
+router.post('/:id/comments', isLoggedIn, petsCtrl.createComments)
+
 
 export {
   router

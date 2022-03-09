@@ -32,10 +32,40 @@
             <li><%= pet.medicalProcedures %><br></li>
           <h3>Spayed or Neutered?</h3>
             <li><%= pet.fixed %><br></li>
-          <h3>Additional Notes:</h3>
-            <li><%= pet.notes %></li>
+            <h3>Notes:</h3>
+            <li><%= pet.notes %><br></li>
           <h3>Owner Information:</h3>
-            <li>  </li>
+            <li><%= pet.owner %></li>
+          <h3>Comments:</h3>
+            <form id="add-comments-form"
+            action="/pets/<%= pet._id %>/comments"
+            method="POST" >
+              <label for="content-textarea"></label>
+              <textarea name="extraInfo" id="extraInfo"></textarea>
+                <input class="inputBox" type="datetime-local" name="dueDate" >
+              <button type="submit">Add Comment</button>
+            </form>
+            <br><br>
+            <% if (pet.comments.length) { %>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Previous Comments</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% pet.comments.forEach(function(review) { %>
+                    <tr>
+                      <td><%= info.content %></td>
+                      <td><%= comment.createdAt.toLocaleDateString() %></td>
+                    </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+            <% } else { %>
+              <h3>No Comments Yet</h3>
+            <% } %>
           <br>
           <br>
       </p>

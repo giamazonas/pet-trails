@@ -92,13 +92,6 @@ function update(req, res) {
   })
 }
 
-function search(req, res) {
-  console.log("PETSEARCH 83", search)
-  Pets.query.findById 
-  res.redirect('/:id')
-  console.log("PETSEARCH 86", search)
-}
-
 function deletePet(req, res) {
   Pets.findById(req.params.id)
   .then(pet => {
@@ -120,7 +113,6 @@ export {
   show,
   edit,
   update,
-  search,
   deletePet as delete,
 
 }

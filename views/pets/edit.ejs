@@ -2,6 +2,7 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <br>
   <h1>Edit Pet Info</h1>
   <div id="form">
     <form action="/pets/<%= pet._id%>/?_method=PATCH" method="POST">
@@ -54,15 +55,14 @@
         <p><%= pet.notes %></p>
         <input  value="<%= pet.notes %>" class="inputBox" type="String" name="notes" >
       </label><br><br>
-      
-
       </label><br><br>
       <button type="submit" 
       class="submitBtn"> Save Info</button>
       <br><br>
     </form>
   </div>
-
+  <br>
+  <br>
 </main>
 
 <%- include('../partials/footer') %>

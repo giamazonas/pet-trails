@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import { isLoggedIn } from '../middleware/middleware.js'
 // import * as profileCtrl from '../controllers/profiles.js'
 import { Pets } from "../models/pet.js"
 
@@ -14,7 +15,7 @@ router.get('/', function (req, res) {
       user: req.user ? req.user : null
     })
   })
-})
+}, isLoggedIn)
 
 
 

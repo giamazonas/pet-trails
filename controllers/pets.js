@@ -129,11 +129,6 @@ function createComments(req, res){
       res.redirect(`/pets/${pet._id}`)
     })
   })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/pets/show')
-  })
-  console.log('ADD IT', Pets.req.body)
 }
 
 export {

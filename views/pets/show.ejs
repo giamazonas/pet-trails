@@ -36,12 +36,13 @@
             <li><%= pet.notes %><br></li>
           <h3>Owner Information:</h3>
             <li><%= pet.owner %></li>
-          <h3>Comments:</h3>
+         
+            <h3>Comments:</h3>
             <form id="add-comments-form"
             action="/pets/<%= pet._id %>/comments"
             method="POST" >
               <label for="content-textarea"></label>
-              <textarea name="extraInfo" id="extraInfo"></textarea>
+              <textarea name="info" id="info"></textarea>
                 <input class="inputBox" type="datetime-local" name="dueDate" >
               <button type="submit">Add Comment</button>
             </form>
@@ -55,9 +56,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <% pet.comments.forEach(function(review) { %>
+                  <% pet.comments.forEach(function(comment) { %>
                     <tr>
-                      <td><%= info.content %></td>
+                      <td><%= comment.info %></td>
                       <td><%= comment.createdAt.toLocaleDateString() %></td>
                     </tr>
                   <% }) %>

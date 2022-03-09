@@ -56,6 +56,10 @@
         <label>Notes:
           <p><%= pet.notes %></p>
         </label><br><br>
+        <label>Owner Info:
+          <p><%= pet.owner %></p>
+          <input  value="<%= pet.owner %>" class="inputBox" type="String" name="owner">
+        </label><br><br>
         <h3>Comments:</h3>
         <form id="add-comments-form"
         action="/pets/<%= pet._id %>/comments"

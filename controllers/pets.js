@@ -122,12 +122,18 @@ function deletePet(req, res) {
 // }
 // 
 function createComments(req, res){
+  console.log('CREATECOMMS')
   Pets.findById(req.params.id, function(err, pet){
     pet.comments.push(req.body)
     pet.save(function(err) {
       res.redirect(`/pets/${pet._id}`)
     })
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/pets/show')
+  })
+  console.log('ADD IT', Pets.req.body)
 }
 
 export {

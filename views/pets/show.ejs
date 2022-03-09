@@ -2,7 +2,6 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <br>
   <section>
     <div class="jumbotronID">
       <h1 class="display-4"><%= pet.name %> details:</h1>
@@ -10,32 +9,33 @@
         <a class="moreInfo" href="<%=pet._id%>/edit">EDIT <%=pet.name%> HERE</a></p>
         <hr class="my-4">
           <h3>Name:</h3>
-            <%= pet.name %><br>
+            <li><%= pet.name %><br></li>
           <h3>Microchip Number:</h3> 
-            <%= pet._id %><br>
+            <li><%= pet._id %><br></li>
           <h3>Any Previous Names:</h3>
-            <%= pet.nameOther %><br>
+            <li><%= pet.nameOther %><br></li>
           <h3>Age:</h3>
-            <%= pet.age %><br>
+            <li><%= pet.age %><br></li>
           <h3>Birthdate:</h3>
-            <%= pet.birthdate %><br>
+            <li><%= pet.birthdate %><br></li>
           <h3>Breed:</h3>
-            <%= pet.breed %><br>
+            <li><%= pet.breed %><br></li>
           <h3>Gender:</h3>
-            <%= pet.gender %><br>
+            <li><%= pet.gender %><br></li>
           <h3>My patient?</h3>
-            <%= pet.myPatient %><br>
+            <li><%= pet.myPatient %><br></li>
           <h3>Vet Information:</h3>
-            <%= pet.vetInfo %><br>
+            <li><%= pet.vetInfo %><br></li>
           <h3>Vaccines List:</h3>
-            <%= pet.vaccines %><br>
+            <li><%= pet.vaccines %><br></li>
           <h3>Medical Procedures:</h3>
-            <%= pet.medicalProcedures %><br>
+            <li><%= pet.medicalProcedures %><br></li>
           <h3>Spayed or Neutered?</h3>
-            <%= pet.fixed %><br>
+            <li><%= pet.fixed %><br></li>
           <h3>Additional Notes:</h3>
-            <%= pet.notes %>
+            <li><%= pet.notes %></li>
           <h3>Owner Information:</h3>
+            <li>  </li>
           <br>
           <br>
       </p>
@@ -51,6 +51,5 @@
   <br>
   <br>
 </main>
-
 
 <%- include('../partials/footer') %>

@@ -82,6 +82,14 @@ nav > a {
   margin: 1.6rem 0;
 }
 
+/* #logoutBtn {
+  background-color: rgb(216, 213, 213);
+}
+
+#logoutBtn:hover {
+  background-color: #15d3da;
+} */
+
 .link {
   padding: 1rem 0;
   font-size: 1.8rem;
@@ -160,3 +168,4 @@ nav > a {
   outline-color:rgb(49, 47, 47);
   color: black;
 }
+

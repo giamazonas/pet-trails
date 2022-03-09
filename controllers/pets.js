@@ -1,13 +1,26 @@
 import { Pets } from "../models/pet.js"
 
 function index(req, res) {
-  Pets.find({})
+  console.log('SEARCH', req.query)
+  if (req.query.id) {
+    console.log('HITTING IF CONDITION')
+    Pets.findById(req.query.id)
+    .populate("myPatient")
+  .then(pet => {
+    res.render('pets/show', {
+      pet,
+      title: "Pets",
+    })
+  })
+  }else {
+    Pets.find({})
   .then(pets => {
     res.render('pets', {
       pets,
       title: "Pets",
     })
   })
+  }
 }
 
 function create(req, res) {

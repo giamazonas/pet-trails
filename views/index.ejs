@@ -3,6 +3,7 @@
 
 <main>
   <br>
+  <br>
   <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
@@ -14,10 +15,9 @@
   <% } %>
   <br>
   <br>
-  <section>
-    <div><br>
-      <div class="jumbotron">
-        <h1 class="display-4">Pets List</h1>
+  <section><br>
+    <div class="jumbotron">
+      <h1 class="display-4">Pets List</h1>
         <p class="lead">
         <hr class="my-4">
         <table class="my-pets">
@@ -38,7 +38,6 @@
           </tbody>
         </table>
       </p>
-    </div>
     </div>
   </section>
   <br>

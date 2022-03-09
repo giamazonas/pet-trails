@@ -2,46 +2,51 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <div>
-    <h1>  <%= pet.name %> details:  </h1>
-    <h3><a class="moreInfo" href="<%=pet._id%>/edit">EDIT <%=pet.name%> HERE</a>
-      <div class="petOptions"></h3>
-        <h3>Name:</h3>
-          <%= pet.name %><br>
-        <h3>Microchip Number:</h3> 
-          <%= pet._id %><br>
+  <br>
+  <section>
+    <br>
+    <div class="jumbotronID">
+      <h1 class="display-4"><%= pet.name %> details:</h1>
+        <p class="lead" > 
+        <a class="moreInfo" href="<%=pet._id%>/edit">EDIT <%=pet.name%> HERE</a></p>
+        <hr class="my-4">
+          <h3>Name:</h3>
+            <%= pet.name %><br>
+          <h3>Microchip Number:</h3> 
+            <%= pet._id %><br>
           <h3>Any Previous Names:</h3>
-          <%= pet.nameOther %><br>
-        <h3>Age:</h3>
-          <%= pet.age %><br>
-        <h3>Birthdate:</h3>
-          <%= pet.birthdate %><br>
-        <h3>Breed:</h3>
-          <%= pet.breed %><br>
-        <h3>Gender:</h3>
-          <%= pet.gender %><br>
-        <h3>My patient?</h3>
-          <%= pet.myPatient %><br>
-        <h3>Vet Information:</h3>
-          <%= pet.vetInfo %><br>
-        <h3>Vaccines List:</h3>
-          <%= pet.vaccines %><br>
-        <h3>Medical Procedures:</h3>
-          <%= pet.medicalProcedures %><br>
-        <h3>Spayed or Neutered?</h3>
-          <%= pet.fixed %><br>
-        <h3>Additional Notes:</h3>
-          <%= pet.notes %>
-        <h3>Owner Information:</h3>
-        <br>
-        <br>
-      </div>
-  </div> 
+            <%= pet.nameOther %><br>
+          <h3>Age:</h3>
+            <%= pet.age %><br>
+          <h3>Birthdate:</h3>
+            <%= pet.birthdate %><br>
+          <h3>Breed:</h3>
+            <%= pet.breed %><br>
+          <h3>Gender:</h3>
+            <%= pet.gender %><br>
+          <h3>My patient?</h3>
+            <%= pet.myPatient %><br>
+          <h3>Vet Information:</h3>
+            <%= pet.vetInfo %><br>
+          <h3>Vaccines List:</h3>
+            <%= pet.vaccines %><br>
+          <h3>Medical Procedures:</h3>
+            <%= pet.medicalProcedures %><br>
+          <h3>Spayed or Neutered?</h3>
+            <%= pet.fixed %><br>
+          <h3>Additional Notes:</h3>
+            <%= pet.notes %>
+          <h3>Owner Information:</h3>
+          <br>
+          <br>
+      </p>
+    </div>
+  <section> 
   <br>
   <br>
   <div class="deleteBtn">
     <form action="/pets/<%= pet._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit">DELETE ALL</button>
+      <button class="btn" type="submit"></button><i class="fa-solid fa-trash-can"></i>  DELETE ALL</button>
     </form>
   </div>
   <br>

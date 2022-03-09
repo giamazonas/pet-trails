@@ -11,7 +11,7 @@ const commentsSchema = new Schema({
 const petsSchema = new Schema({
   _id: {type: Number, },
   name: {type: String, required:true},
-  nameOther: {type: String, timestamps: true},
+  nameOther: [{type: String, timestamps: true}],
   age: {type: Number, timestamps: true},
   birthdate: {type: Date, },
   breed: {type: String},

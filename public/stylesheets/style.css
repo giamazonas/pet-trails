@@ -42,6 +42,7 @@ h2 {
 
 h3 {
   font-size: 2.4rem;
+  font-weight: bold;
 }
 
 ul {
@@ -75,10 +76,6 @@ nav > a {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.petOptions {
-  font-size: 1.75rem;
 }
 
 .btn {
@@ -119,9 +116,10 @@ nav > a {
   padding: 10px;
   text-decoration: black;
   text-decoration-style: double;
-  font-size: 50px;
+  font-size: 20px;
   border-radius: 5px;
-  background-color: #15d3da;
+  background-color: rgb(238, 237, 237);
+  border-style: inset;
 }
 
 .deleteBtn:hover {
@@ -135,4 +133,29 @@ nav > a {
   padding: 20px;
   border-radius: 10px;
   border-style: inset;
+}
+
+.jumbotronID {
+  background-color: rgb(238, 237, 237);
+  padding: 60px;
+  border-radius: 10px;
+  border-style:none;
+  font-size: 1.75rem;
+}
+
+.submitBtn {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 5px;
+  background-color: #15d3da;
+}
+
+.submitBtn:hover {
+  background-color: rgb(216, 213, 213);
+  outline-color:rgb(49, 47, 47);
+  color: black;
 }

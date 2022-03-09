@@ -3,54 +3,59 @@
 
 <main>
   <br>
-  <h1>Add new animal</h1>
-  <div id="form">
-    <form action="/pets/new" method="POST">
-      <label>Microchip:
-        <input class="inputBox" type="Number" name="_id" placeholder="15-digit microchip# required" required>
-      </label><br><br>
-      <label>Name:
-        <input class="inputBox" type="String" name="name" >
-      </label><br><br>
-      <label>Age:
-        <input class="inputBox" type="Number" name="age" >
-      </label><br><br>
-      <label>Birthdate:
-        <input class="inputBox" type="datetime-local" name="birthdate" >
-      </label><br><br>
-      <label>Breed:
-        <input class="inputBox" type="String" name="breed" >
-      </label><br><br>
-      <label>Gender:
-        <input class="inputBox" type="String" name="gender" >
-      </label><br><br>
-      <label>My Patient:
-        <input class="inputBox" type="String" name="myPatient" placeholder="true or false">
-      </label><br><br>
-      <label>Vet information:
-        <input class="inputBox" type="String" name="vetInfo" >
-      </label><br><br>
-      <label>Vaccines:
-        <input class="inputBox" type="String" name="vaccines" placeholder="type and expiration date" >
-      </label><br><br>
-      <label>Medical Procedures:
-        <input class="inputBox" type="String" name="medicalProcedures" >
-      </label><br><br>
-      <label>Fixed:
-        <input class="inputBox" type="String" name="fixed" placeholder="true or false">
-      </label><br><br>
-      <label>Notes:
-        <input class="inputBox" type="String" name="notes" >
-      </label><br><br>
-      <label>Previous names:
-        <input class="inputBox" type="String" name="nameOther" >
-      </label><br><br>
-      <button type="submit" 
-      class="submitBtn">Save Info</button>
-    </form>
-    <br>
-    <br>
+  <div class="jumbotronID">
+    <h1 class="display-4">Add New Pet</h1>
+      <p class="lead">
+      <hr class="my-4">
+      <form action="/pets/new" method="POST">
+        <label>Microchip:
+          <input class="inputBox" type="Number" name="_id" placeholder="15-digit microchip# required" required>
+        </label><br><br>
+        <label>Name:
+          <input class="inputBox" type="String" name="name" >
+        </label><br><br>
+        <label>Age:
+          <input class="inputBox" type="Number" name="age" >
+        </label><br><br>
+        <label>Birthdate:
+          <input class="inputBox" type="datetime-local" name="birthdate" >
+        </label><br><br>
+        <label>Breed:
+          <input class="inputBox" type="String" name="breed" >
+        </label><br><br>
+        <label>Gender:
+          <input class="inputBox" type="String" name="gender" >
+        </label><br><br>
+        <label>My Patient:
+          <input class="inputBox" type="String" name="myPatient" placeholder="true or false">
+        </label><br><br>
+        <label>Vet information:
+          <input class="inputBox" type="String" name="vetInfo" >
+        </label><br><br>
+        <label>Vaccines:
+          <input class="inputBox" type="String" name="vaccines" placeholder="type and expiration date" >
+        </label><br><br>
+        <label>Medical Procedures:
+          <input class="inputBox" type="String" name="medicalProcedures" >
+        </label><br><br>
+        <label>Fixed:
+          <input class="inputBox" type="String" name="fixed" placeholder="true or false">
+        </label><br><br>
+        <label>Notes:
+          <input class="inputBox" type="String" name="notes" >
+        </label><br><br>
+        <label>Previous names:
+          <input class="inputBox" type="String" name="nameOther" >
+        </label><br><br>
+        <button type="submit" 
+        class="submitBtn">Save Info</button>
+      </form>
+      <br>
+      <br>
+    </p>
   </div>
+  <br>
+  <br>
 </main>
 
 <%- include('../partials/footer') %>

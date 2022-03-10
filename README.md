@@ -34,6 +34,9 @@ Add a new pet
 ![add new](/public/assets/add_new.png)
 <br>
 <br>
+Wireframe
+
+![wireframe](/public/assets/Wireframe__.png)
 <br>
 <br>
 
@@ -58,6 +61,7 @@ ________________
  <br>
  Visual Studio Code<br>
  Google OAuth
+ EJS
 
 <br>
 <br>

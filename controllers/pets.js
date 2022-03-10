@@ -106,21 +106,6 @@ function deletePet(req, res) {
   })
 }
 
-// ADD STICKY NAVBAR - LOCATION??
-// window.onscroll = function() {myFunction()};
-
-// var navbar = document.getElementById("nav");
-
-// var sticky = navbar.offsetTop;
-
-// function myNavFunction() {
-//   if (window.pageYOffset >= sticky) {
-//     navbar.classList.add("sticky")
-//   } else {
-//     navbar.classList.remove("sticky");
-//   }
-// }
-
 function createComments(req, res){
   console.log('CREATECOMMS')
   Pets.findById(req.params.id, function(err, pet){
@@ -140,6 +125,4 @@ export {
   edit,
   update,
   deletePet as delete,
-  // myNavFunction,
-
 }

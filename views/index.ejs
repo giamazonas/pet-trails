@@ -4,7 +4,7 @@
 <main>
   <br>
   <br>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <h1> <%= user ? user.profile.name : "" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img
@@ -15,6 +15,7 @@
   <% } %>
   <br>
   <br>
+  <% if (user && user.profile._id.equals( pets.forEach(pet => { pet.owner }) )) { %>
   <section><br>
     <div class="jumbotron">
       <h1 class="display-4">Pets List</h1>
@@ -40,6 +41,7 @@
       </p>
     </div>
   </section>
+  <% } %>
   <br>
   <br>
 </main>

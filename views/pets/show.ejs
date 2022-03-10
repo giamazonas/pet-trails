@@ -6,7 +6,7 @@
     <div class="jumbotronID">
       <h1 class="display-4"><%= pet.name %> details:</h1>
         <p class="lead" > 
-        <a class="moreInfo" href="<%=pet._id%>/edit">EDIT <%=pet.name%> HERE</a></p>
+        <a class="moreInfo" href="pets/<%=pet._id%>/edit">EDIT <%=pet.name%> HERE</a></p>
         <hr class="my-4">
           <h3>Name:</h3>
             <li><%= pet.name %><br></li>
@@ -22,8 +22,6 @@
             <li><%= pet.breed %><br></li>
           <h3>Gender:</h3>
             <li><%= pet.gender %><br></li>
-          <h3>My patient?</h3>
-            <li><%= pet.myPatient %><br></li>
           <h3>Vet Information:</h3>
             <li><%= pet.vetInfo %><br></li>
           <h3>Vaccines List:</h3>
@@ -34,9 +32,6 @@
             <li><%= pet.fixed %><br></li>
             <h3>Notes:</h3>
             <li><%= pet.notes %><br></li>
-          <h3>Owner Information:</h3>
-            <li><%= pet.owner %></li>
-         
             <h3>Comments:</h3>
             <form id="add-comments-form"
             action="/pets/<%= pet._id %>/comments"
@@ -73,12 +68,14 @@
     </div>
   <section> 
   <br>
-  <br>
-  <div class="deleteBtn">
-    <form action="/pets/<%= pet._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit"></button><i class="fa-solid fa-trash-can"></i>  DELETE ALL</button>
-    </form>
-  </div>
+  <br> 
+  <% if (user && user.profile._id.equals(pet.owner)) { %>
+    <div class="deleteBtn">
+      <form action="/pets/<%= pet._id %>?_method=DELETE" method="POST">
+        <button class="btn" type="submit"><i class="fa-solid fa-trash-can"></i>  DELETE PET </button>
+      </form>
+    </div>
+  <% } %>
   <br>
   <br>
 </main>

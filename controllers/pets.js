@@ -2,7 +2,7 @@ import { Pets } from "../models/pet.js";
 
 function index(req, res) {
   console.log("SEARCH", req.query);
-  const error = req.query.error 
+  const error = req.query.error;
   if (req.query.id) {
     console.log("HITTING IF CONDITION");
     Pets.findById(req.query.id)
@@ -15,7 +15,7 @@ function index(req, res) {
             error,
           });
         } else {
-          res.redirect('/pets?error=true')
+          res.redirect("/pets?error=true");
         }
       });
   } else {
@@ -23,7 +23,7 @@ function index(req, res) {
       res.render("pets", {
         pets,
         title: "Pets",
-        error, 
+        error,
       });
     });
   }
@@ -31,6 +31,11 @@ function index(req, res) {
 
 function create(req, res) {
   req.body.owner = req.user.profile._id;
+  if (req.body.myPatient === "true") {
+    req.body.myPatient = [req.user.profile._id];
+  } else {
+    req.body.myPatient = [];
+  }
   Pets.create(req.body)
     .then((pet) => {
       pet.save(function (error) {
@@ -68,13 +73,17 @@ function show(req, res) {
 }
 
 function edit(req, res) {
-  console.log("TEST EDIT");
   Pets.findById(req.params.id)
+    .populate("myPatient")
     .then((pet) => {
-      res.render("pets/edit", {
-        pet,
-        title: "edit",
-      });
+      if (!pet.myPatient.some((p) => p._id.equals(req.user.profile._id))) {
+        res.redirect("/pets");
+      } else {
+        res.render("pets/edit", {
+          pet,
+          title: "edit",
+        });
+      }
     })
     .catch((err) => {
       console.log(err);
@@ -102,6 +111,7 @@ function update(req, res) {
 function deletePet(req, res) {
   Pets.findById(req.params.id)
     .then((pet) => {
+      console.log("PETTTTT", pet);
       pet.delete().then(() => {
         res.redirect("/");
       });

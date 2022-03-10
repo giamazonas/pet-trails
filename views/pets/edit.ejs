@@ -34,9 +34,6 @@
         <label>Gender:
           <p><%= pet.gender %></p>
         </label><br><br>
-        <label>My Patient:
-          <p><%= pet.myPatient %></p>
-          <br>
         <label>Vet information:
           <p><%= pet.vetInfo %></p>
           <input  value="<%= pet.vetInfo %>" class="inputBox" type="String" name="vetInfo" placeholder="add vet info">
@@ -56,11 +53,14 @@
         <label>Notes:
           <p><%= pet.notes %></p>
         </label><br><br>
-        <label>Owner Info:
-          <p><%= pet.owner %></p>
-          <input  value="<%= pet.owner %>" class="inputBox" type="String" name="owner">
-        </label><br><br>
         <h3>Comments:</h3>
+        <br><br>
+        <% if (user && user.profile._id.equals(pet.owner)) { %>
+          <button type="submit" 
+          class="submitBtn"> Save Info</button>
+          <% } %>
+          <br><br>
+        </form>
         <form id="add-comments-form"
         action="/pets/<%= pet._id %>/comments"
         method="POST" >
@@ -68,17 +68,10 @@
           <textarea name="extraInfo" id="extraInfo"></textarea>
             <input class="inputBox" type="datetime-local" name="dueDate" >
         </form>
-        <br><br>
-        <% if (user && user.profile && user.profile._id.equals(pet._id)) { %>
-            <button type="submit" 
-            class="submitBtn"> Save Info</button>
-        <% } %>
-        <br><br>
-      </form>
-    </p>
-  </div>
-  <br>
-  <br>
-</main>
+      </p>
+    </div>
+    <br>
+    <br>
+  </main>
 
 <%- include('../partials/footer') %>

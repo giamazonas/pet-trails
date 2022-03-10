@@ -8,15 +8,15 @@
     <h2></h2>
     <i class="fa-solid fa-paw"></i>
     <i class="fa-solid fa-paw"></i><br>
+    <% if (error) { %>
+      <h3> check number or add new pet </h3> 
+    <% } %>
     <div class="search-container">
       <form id="form" action="/pets" method="GET" >
         <input type="text" placeholder="Enter microchip ID here.." name="id">
         <button type="submit"><i class="fa fa-search">Search!</i></button>
         </form><br>
-        <!-- <div class="alert alert-warning" role="alert" date-dismiss="alert">
-          doublecheck number entered or add new pet
-        </div> -->
-        <!-- https://getbootstrap.com/docs/4.0/components/alerts/ -->
+
     </div>
   </section>
   <section>

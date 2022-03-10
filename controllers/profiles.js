@@ -1,10 +1,7 @@
-
-import { Profile } from '../models/profile.js'
+import { Profile } from "../models/profile.js";
 
 function index(req, res) {
-  console.log('PROFILE')
+  console.log("PROFILE");
 }
 
-export {
-  index
-}
+export { index };

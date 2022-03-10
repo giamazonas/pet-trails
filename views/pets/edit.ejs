@@ -69,8 +69,10 @@
             <input class="inputBox" type="datetime-local" name="dueDate" >
         </form>
         <br><br>
-        <button type="submit" 
-        class="submitBtn"> Save Info</button>
+        <% if (user && user.profile && user.profile._id.equals(pet._id)) { %>
+            <button type="submit" 
+            class="submitBtn"> Save Info</button>
+        <% } %>
         <br><br>
       </form>
     </p>

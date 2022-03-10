@@ -120,7 +120,7 @@ function deletePet(req, res) {
 //     navbar.classList.remove("sticky");
 //   }
 // }
-// 
+
 function createComments(req, res){
   console.log('CREATECOMMS')
   Pets.findById(req.params.id, function(err, pet){

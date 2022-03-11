@@ -4,7 +4,6 @@
 <main>
   <br>
   <div class="text-end d-flex align-items-center">
-    <% // TODO: Add login logic here %> 
     <% if (user) { %>
       <a href="/auth/logout">
         <button type="submit" class="btn btn-warning" id="logoutBtn" >Logout</button>
@@ -16,9 +15,9 @@
         </button>
       </a>
     <% } %>
-    </div>
-    <br>
-    <br>
+  </div>
+  <br>
+  <br>
 </main>
 
 <%- include('../partials/footer') %>

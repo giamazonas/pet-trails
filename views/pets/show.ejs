@@ -30,12 +30,10 @@
             <li><%= pet.medicalProcedures %><br></li>
           <h3>Spayed or Neutered?</h3>
             <li><%= pet.fixed %><br></li>
-            <h3>Notes:</h3>
+          <h3>Notes:</h3>
             <li><%= pet.notes %><br></li>
-            <h3>Comments:</h3>
-            <form id="add-comments-form"
-            action="/pets/<%= pet._id %>/comments"
-            method="POST" >
+          <h3>Comments:</h3>
+            <form id="add-comments-form" action="/pets/<%= pet._id %>/comments" method="POST" >
               <label for="content-textarea"></label>
               <textarea name="info" id="info"></textarea>
                 <input class="inputBox" type="datetime-local" name="dueDate" >
@@ -64,7 +62,7 @@
             <% } %>
           <br>
           <br>
-      </p>
+        </p>
     </div>
   <section> 
   <br>

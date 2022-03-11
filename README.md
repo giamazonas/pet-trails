@@ -69,6 +69,7 @@ ________________
 ### ICEBOX 🐾
 ___________________
 
+- Only vet's animals show up on their vet page(currently all are visible for troubleshooting)
 - Owner log in with limited access to viewing and editing pets (only their own)
 - All previous information on owner's pets is viewable, but not editable
 - Owner can add their pet if they're not yet in the DB or if they've recently been microchipped

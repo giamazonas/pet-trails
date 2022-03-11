@@ -53,24 +53,21 @@
         <label>Notes:
           <p><%= pet.notes %></p>
         </label><br><br>
-        <h3>Comments:</h3>
-        <br><br>
           <button type="submit" 
-          class="submitBtn"> Save Info</button>
-          <br><br>
-        </form>
-        <form id="add-comments-form"
-        action="/pets/<%= pet._id %>/comments"
-        method="POST" >
-          <label for="content-textarea"></label>
-          <textarea name="extraInfo" id="extraInfo"></textarea>
-            <input class="inputBox" type="datetime-local" name="dueDate" >
-          <button type="submit" class="submitBtn">Save Comments </button>
-        </form>
-      </p>
-    </div>
-    <br>
-    <br>
-  </main>
+          class="submitBtn"> Save Edit</button>
+          <br><br><br>
+      </form>
+      <h3>Comments:</h3>
+      <form id="add-comments-form" action="/pets/<%= pet._id %>/comments" method="POST" >
+        <label for="content-textarea"></label>
+        <textarea name="extraInfo" id="extraInfo"></textarea><br>
+        <input class="inputBox" type="datetime-local" name="dueDate" >
+        <button type="submit" class="submitBtn">Save Comments </button>
+      </form>
+    </p>
+  </div>
+  <br>
+  <br>
+</main>
 
 <%- include('../partials/footer') %>

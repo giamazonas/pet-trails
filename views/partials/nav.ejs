@@ -16,19 +16,13 @@
         </button>
       </a>
     <% } %> 
-    <a 
-        href="/pets" <%- title === 'Home' ? 'class="active"' : "" %>
+    <a href="/pets" <%- title === 'Home' ? 'class="active"' : "" %>
       >Pet Trails Main
-      </a>
-      <a 
-        href="/pets/new" <%- title === 'Add Pet' ? 'class="active"' : "" %>
-      >Add Pet
-      </a>
-      <a 
-        href="/"
-        <%- title === 'My Page' ? 'class="active"' : '' %>    >
-        Pet Trails Vet
-      </a>
-
-
+    </a>
+    <a href="/pets/new" <%- title === 'Add Pet' ? 'class="active"' : "" %>
+    >Add Pet
+    </a>
+    <a href="/"<%- title === 'My Page' ? 'class="active"' : '' %>    
+    >Pet Trails Vet
+    </a>
   </nav>

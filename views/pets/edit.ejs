@@ -55,10 +55,8 @@
         </label><br><br>
         <h3>Comments:</h3>
         <br><br>
-        <% if (user && user.profile._id.equals(pet.owner)) { %>
           <button type="submit" 
           class="submitBtn"> Save Info</button>
-          <% } %>
           <br><br>
         </form>
         <form id="add-comments-form"
@@ -67,6 +65,7 @@
           <label for="content-textarea"></label>
           <textarea name="extraInfo" id="extraInfo"></textarea>
             <input class="inputBox" type="datetime-local" name="dueDate" >
+          <button type="submit" class="submitBtn">Save Comments </button>
         </form>
       </p>
     </div>

@@ -11,36 +11,34 @@
         src="<%= user.profile.avatar %>"
         alt="<%= user.profile.name %> avatar"
       />
+      <br>
+      <br>
     </div>
-  <% } %>
-  <br>
-  <br>
-  <% if (user && user.profile._id.equals( pets.forEach(pet => { pet.owner }) )) { %>
-  <section><br>
-    <div class="jumbotron">
-      <h1 class="display-4">Pets List</h1>
-        <p class="lead">
-        <hr class="my-4">
-        <table class="my-pets">
-          <thead>
-            <tr>
-              <th> Name </th>
-              <th>Microchip Number</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% pets.forEach(pet => { %>
-              <tr>
-                <td class="eachPet"><%= pet.name %></td>
-                <td><%= pet._id %></td>
-                <td><a class="moreInfo" href="./pets/<%=pet._id%>">MORE</a> </td>
-              </tr>
-            <% }) %>
-          </tbody>
-        </table>
-      </p>
-    </div>
-  </section>
+      <section><br>
+        <div class="jumbotron">
+          <h1 class="display-4">Pets List</h1>
+            <p class="lead">
+            <hr class="my-4">
+            <table class="my-pets">
+              <thead>
+                <tr>
+                  <th> Name </th>
+                  <th>Microchip Number</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% pets.forEach(pet => { %>
+                  <tr>
+                    <td class="eachPet"><%= pet.name %></td>
+                    <td><%= pet._id %></td>
+                    <td><a class="moreInfo" href="./pets/<%=pet._id%>">MORE</a> </td>
+                  </tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </p>
+        </div>
+      </section>
   <% } %>
   <br>
   <br>

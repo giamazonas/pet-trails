@@ -69,12 +69,14 @@ ________________
 ### ICEBOX 🐾
 ___________________
 
+- Styling update
 - Only vet's animals show up on their vet page(currently all are visible for troubleshooting)
 - Owner log in with limited access to viewing and editing pets (only their own)
 - All previous information on owner's pets is viewable, but not editable
 - Owner can add their pet if they're not yet in the DB or if they've recently been microchipped
 - Owner profile allows them to add an "avatar" picture of their pets to each pet
 - First time login asks if user is a Vet, which requires practice to be entered and confirmed. Or option given to proceed as pet owner access only. 
+- Seperate link page where extensive vet records can sync up to the system
 <br>
 <br>
 
